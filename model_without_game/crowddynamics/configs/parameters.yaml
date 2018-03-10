@@ -1,0 +1,24 @@
+!!omap
+- simulation: !!omap
+  - time_tot: !!omap
+    - resizable: true
+    - graphics: false
+  - in_goal: !!omap
+    - resizable: true
+    - graphics: false
+- agent: !!omap
+  - position: !!omap
+    - resizable: true
+    - graphics: true
+  - velocity: !!omap
+    - resizable: true
+    - graphics: true
+  - puristus: !!omap
+    - resizable: true
+    - graphics: true
+  - radius: !!omap
+    - resizable: true
+    - graphics: true
+  - in_room1: !!omap
+    - resizable: true
+    - graphics: true

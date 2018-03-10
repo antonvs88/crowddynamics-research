@@ -1,0 +1,358 @@
+2018-03-10 15:05:42,957 - INFO <main> Platform: Linux-4.4.0-116-generic-x86_64-with-debian-stretch-sid
+2018-03-10 15:05:42,958 - INFO <main> Path: /u/51/avonscha/data/Desktop/Koodit PNASia varten/model_without_game
+2018-03-10 15:05:42,959 - INFO <main> Python: 3.4.5
+2018-03-10 15:05:42,959 - INFO <gui> Starting GUI
+2018-03-10 15:05:46,279 - INFO <configure_plot> 
+2018-03-10 15:05:46,292 - INFO <configure_signals> 
+2018-03-10 15:05:49,111 - INFO <set_sidebar> room_evacuation_game
+2018-03-10 15:05:49,112 - INFO <clear_sidebar> 
+2018-03-10 15:05:50,276 - INFO <set_simulation> 
+2018-03-10 15:05:50,278 - INFO <reset_buffers> 
+2018-03-10 15:05:50,306 - INFO <set_field> 
+2018-03-10 15:05:51,035 - INFO <set_algorithms> 
+2018-03-10 15:06:21,626 - INFO <set_body> In: 200, adult
+2018-03-10 15:06:25,990 - INFO <set_model> circular
+2018-03-10 15:06:26,084 - INFO <set_agents> 
+2018-03-10 15:06:27,972 - INFO <set_agents> Density: 0.36022745341633394
+2018-03-10 15:06:28,084 - INFO <configure> 
+2018-03-10 15:06:28,119 - INFO <configure_queuing> 
+2018-03-10 15:06:30,026 - INFO <start> 
+2018-03-10 15:06:30,052 - INFO <run> MultiAgent Starting
+2018-03-10 15:06:53,229 - INFO <stop> 
+2018-03-10 15:06:53,229 - INFO <stop> MultiAgent Exit...
+2018-03-10 15:06:53,247 - INFO <run> MultiAgent Stopping
+2018-03-10 15:06:53,322 - INFO <reset_buffers> 
+2018-03-10 15:06:54,783 - INFO <gui> Finishing GUI
+
+2018-03-10 15:16:25,197 - INFO <main> Platform: Linux-4.4.0-116-generic-x86_64-with-debian-stretch-sid
+2018-03-10 15:16:25,198 - INFO <main> Path: /u/51/avonscha/data/Desktop/Koodit PNASia varten/model_without_game
+2018-03-10 15:16:25,198 - INFO <main> Python: 3.4.5
+2018-03-10 15:16:25,198 - INFO <gui> Starting GUI
+2018-03-10 15:16:29,184 - INFO <configure_plot> 
+2018-03-10 15:16:29,204 - INFO <configure_signals> 
+2018-03-10 15:16:33,648 - INFO <set_sidebar> room_evacuation_game
+2018-03-10 15:16:33,649 - INFO <clear_sidebar> 
+2018-03-10 15:16:35,418 - INFO <set_simulation> 
+2018-03-10 15:16:35,420 - INFO <reset_buffers> 
+2018-03-10 15:16:35,433 - INFO <set_field> 
+2018-03-10 15:16:36,277 - INFO <set_algorithms> 
+2018-03-10 15:17:06,943 - INFO <set_body> In: 200, adult
+2018-03-10 15:17:11,542 - INFO <set_model> circular
+2018-03-10 15:17:11,628 - INFO <set_agents> 
+2018-03-10 15:17:13,642 - INFO <set_agents> Density: 0.35749824332161667
+2018-03-10 15:17:13,762 - INFO <configure> 
+2018-03-10 15:17:13,796 - INFO <configure_queuing> 
+2018-03-10 15:17:15,666 - INFO <start> 
+2018-03-10 15:17:15,696 - INFO <run> MultiAgent Starting
+2018-03-10 15:18:08,665 - INFO <stop> 
+2018-03-10 15:18:08,666 - INFO <stop> MultiAgent Exit...
+2018-03-10 15:18:08,667 - INFO <run> MultiAgent Stopping
+2018-03-10 15:18:08,686 - INFO <reset_buffers> 
+2018-03-10 15:18:10,372 - INFO <gui> Finishing GUI
+
+2018-03-10 15:27:44,748 - INFO <main> Platform: Linux-4.4.0-116-generic-x86_64-with-debian-stretch-sid
+2018-03-10 15:27:44,749 - INFO <main> Path: /u/51/avonscha/data/Desktop/Koodit PNASia varten/model_without_game
+2018-03-10 15:27:44,749 - INFO <main> Python: 3.4.5
+2018-03-10 15:27:44,750 - INFO <gui> Starting GUI
+2018-03-10 15:27:48,234 - INFO <configure_plot> 
+2018-03-10 15:27:48,249 - INFO <configure_signals> 
+2018-03-10 15:27:50,799 - INFO <set_sidebar> room_evacuation_game
+2018-03-10 15:27:50,800 - INFO <clear_sidebar> 
+2018-03-10 15:27:52,320 - INFO <set_simulation> 
+2018-03-10 15:27:52,321 - INFO <reset_buffers> 
+2018-03-10 15:27:52,345 - INFO <set_field> 
+2018-03-10 15:27:53,074 - INFO <set_algorithms> 
+2018-03-10 15:28:08,189 - INFO <set_body> In: 200, adult
+2018-03-10 15:28:12,427 - INFO <set_model> circular
+2018-03-10 15:28:12,507 - INFO <set_agents> 
+2018-03-10 15:28:14,455 - INFO <set_agents> Density: 0.36938176937035594
+2018-03-10 15:28:14,568 - INFO <configure> 
+2018-03-10 15:28:14,600 - INFO <configure_queuing> 
+2018-03-10 15:28:16,727 - INFO <start> 
+2018-03-10 15:28:16,751 - INFO <run> MultiAgent Starting
+2018-03-10 15:54:00,509 - INFO <main> Platform: Linux-4.4.0-116-generic-x86_64-with-debian-stretch-sid
+2018-03-10 15:54:00,510 - INFO <main> Path: /u/51/avonscha/data/Desktop/Koodit PNASia varten/model_without_game
+2018-03-10 15:54:00,510 - INFO <main> Python: 3.4.5
+2018-03-10 15:54:00,510 - INFO <gui> Starting GUI
+2018-03-10 15:54:03,558 - INFO <configure_plot> 
+2018-03-10 15:54:03,571 - INFO <configure_signals> 
+2018-03-10 15:54:06,739 - INFO <set_sidebar> room_evacuation_game
+2018-03-10 15:54:06,740 - INFO <clear_sidebar> 
+2018-03-10 15:54:08,190 - INFO <set_simulation> 
+2018-03-10 15:54:08,191 - INFO <reset_buffers> 
+2018-03-10 15:54:08,209 - INFO <set_field> 
+2018-03-10 15:54:08,880 - INFO <set_algorithms> 
+2018-03-10 15:54:23,464 - INFO <set_body> In: 200, adult
+2018-03-10 15:54:27,463 - INFO <set_model> circular
+2018-03-10 15:54:27,540 - INFO <set_agents> 
+2018-03-10 15:54:29,303 - INFO <set_agents> Density: 0.3642884379511023
+2018-03-10 15:54:29,416 - INFO <configure> 
+2018-03-10 15:54:29,449 - INFO <configure_queuing> 
+2018-03-10 15:54:39,475 - INFO <start> 
+2018-03-10 15:54:39,502 - INFO <run> MultiAgent Starting
+2018-03-10 15:58:46,503 - INFO <main> Platform: Linux-4.4.0-116-generic-x86_64-with-debian-stretch-sid
+2018-03-10 15:58:46,504 - INFO <main> Path: /u/51/avonscha/data/Desktop/Koodit PNASia varten/model_without_game
+2018-03-10 15:58:46,504 - INFO <main> Python: 3.4.5
+2018-03-10 15:58:46,505 - INFO <gui> Starting GUI
+2018-03-10 15:58:50,103 - INFO <configure_plot> 
+2018-03-10 15:58:50,117 - INFO <configure_signals> 
+2018-03-10 15:58:52,316 - INFO <set_sidebar> room_evacuation_game
+2018-03-10 15:58:52,317 - INFO <clear_sidebar> 
+2018-03-10 15:58:53,437 - INFO <set_simulation> 
+2018-03-10 15:58:53,438 - INFO <reset_buffers> 
+2018-03-10 15:58:53,449 - INFO <set_field> 
+2018-03-10 15:58:54,133 - INFO <set_algorithms> 
+2018-03-10 15:59:08,480 - INFO <set_body> In: 200, adult
+2018-03-10 15:59:12,444 - INFO <set_model> circular
+2018-03-10 15:59:12,520 - INFO <set_agents> 
+2018-03-10 15:59:14,379 - INFO <set_agents> Density: 0.3610061757050623
+2018-03-10 15:59:14,490 - INFO <configure> 
+2018-03-10 15:59:14,515 - INFO <configure_queuing> 
+2018-03-10 15:59:16,296 - INFO <start> 
+2018-03-10 15:59:16,311 - INFO <run> MultiAgent Starting
+2018-03-10 16:00:31,441 - INFO <main> Platform: Linux-4.4.0-116-generic-x86_64-with-debian-stretch-sid
+2018-03-10 16:00:31,442 - INFO <main> Path: /u/51/avonscha/data/Desktop/Koodit PNASia varten/model_without_game
+2018-03-10 16:00:31,442 - INFO <main> Python: 3.4.5
+2018-03-10 16:00:31,442 - INFO <gui> Starting GUI
+2018-03-10 16:00:34,456 - INFO <configure_plot> 
+2018-03-10 16:00:34,471 - INFO <configure_signals> 
+2018-03-10 16:00:36,967 - INFO <set_sidebar> room_evacuation_game
+2018-03-10 16:00:36,968 - INFO <clear_sidebar> 
+2018-03-10 16:00:38,035 - INFO <set_simulation> 
+2018-03-10 16:00:38,036 - INFO <reset_buffers> 
+2018-03-10 16:00:38,051 - INFO <set_field> 
+2018-03-10 16:00:38,780 - INFO <set_algorithms> 
+2018-03-10 16:00:53,097 - INFO <set_body> In: 200, adult
+2018-03-10 16:00:57,137 - INFO <set_model> circular
+2018-03-10 16:00:57,224 - INFO <set_agents> 
+2018-03-10 16:00:58,966 - INFO <set_agents> Density: 0.35634403437302603
+2018-03-10 16:00:59,078 - INFO <configure> 
+2018-03-10 16:00:59,107 - INFO <configure_queuing> 
+2018-03-10 16:01:00,725 - INFO <start> 
+2018-03-10 16:01:00,744 - INFO <run> MultiAgent Starting
+2018-03-10 16:01:34,544 - INFO <main> Platform: Linux-4.4.0-116-generic-x86_64-with-debian-stretch-sid
+2018-03-10 16:01:34,545 - INFO <main> Path: /u/51/avonscha/data/Desktop/Koodit PNASia varten/model_without_game
+2018-03-10 16:01:34,546 - INFO <main> Python: 3.4.5
+2018-03-10 16:01:34,546 - INFO <gui> Starting GUI
+2018-03-10 16:01:37,552 - INFO <configure_plot> 
+2018-03-10 16:01:37,565 - INFO <configure_signals> 
+2018-03-10 16:01:39,779 - INFO <set_sidebar> room_evacuation_game
+2018-03-10 16:01:39,780 - INFO <clear_sidebar> 
+2018-03-10 16:01:41,182 - INFO <set_simulation> 
+2018-03-10 16:01:41,183 - INFO <reset_buffers> 
+2018-03-10 16:01:41,191 - INFO <set_field> 
+2018-03-10 16:01:41,842 - INFO <set_algorithms> 
+2018-03-10 16:01:56,181 - INFO <set_body> In: 200, adult
+2018-03-10 16:02:00,293 - INFO <set_model> circular
+2018-03-10 16:02:00,373 - INFO <set_agents> 
+2018-03-10 16:02:02,189 - INFO <set_agents> Density: 0.3622526735193798
+2018-03-10 16:02:02,301 - INFO <configure> 
+2018-03-10 16:02:02,330 - INFO <configure_queuing> 
+2018-03-10 16:02:04,269 - INFO <start> 
+2018-03-10 16:02:04,292 - INFO <run> MultiAgent Starting
+2018-03-10 16:02:44,031 - INFO <main> Platform: Linux-4.4.0-116-generic-x86_64-with-debian-stretch-sid
+2018-03-10 16:02:44,032 - INFO <main> Path: /u/51/avonscha/data/Desktop/Koodit PNASia varten/model_without_game
+2018-03-10 16:02:44,032 - INFO <main> Python: 3.4.5
+2018-03-10 16:02:44,032 - INFO <gui> Starting GUI
+2018-03-10 16:02:47,043 - INFO <configure_plot> 
+2018-03-10 16:02:47,057 - INFO <configure_signals> 
+2018-03-10 16:02:49,204 - INFO <set_sidebar> room_evacuation_game
+2018-03-10 16:02:49,205 - INFO <clear_sidebar> 
+2018-03-10 16:02:50,514 - INFO <set_simulation> 
+2018-03-10 16:02:50,515 - INFO <reset_buffers> 
+2018-03-10 16:02:50,532 - INFO <set_field> 
+2018-03-10 16:02:51,226 - INFO <set_algorithms> 
+2018-03-10 16:03:05,119 - INFO <set_body> In: 200, adult
+2018-03-10 16:03:09,069 - INFO <set_model> circular
+2018-03-10 16:03:09,147 - INFO <set_agents> 
+2018-03-10 16:03:10,949 - INFO <set_agents> Density: 0.3615312475953192
+2018-03-10 16:03:11,062 - INFO <configure> 
+2018-03-10 16:03:11,098 - INFO <configure_queuing> 
+2018-03-10 16:03:12,985 - INFO <start> 
+2018-03-10 16:03:12,999 - INFO <run> MultiAgent Starting
+2018-03-10 16:04:02,613 - INFO <main> Platform: Linux-4.4.0-116-generic-x86_64-with-debian-stretch-sid
+2018-03-10 16:04:02,614 - INFO <main> Path: /u/51/avonscha/data/Desktop/Koodit PNASia varten/model_without_game
+2018-03-10 16:04:02,614 - INFO <main> Python: 3.4.5
+2018-03-10 16:04:02,614 - INFO <gui> Starting GUI
+2018-03-10 16:04:05,632 - INFO <configure_plot> 
+2018-03-10 16:04:05,647 - INFO <configure_signals> 
+2018-03-10 16:04:07,928 - INFO <set_sidebar> room_evacuation_game
+2018-03-10 16:04:07,929 - INFO <clear_sidebar> 
+2018-03-10 16:04:08,783 - INFO <set_simulation> 
+2018-03-10 16:04:08,784 - INFO <reset_buffers> 
+2018-03-10 16:04:08,801 - INFO <set_field> 
+2018-03-10 16:04:09,466 - INFO <set_algorithms> 
+2018-03-10 16:04:23,217 - INFO <set_body> In: 200, adult
+2018-03-10 16:04:27,218 - INFO <set_model> circular
+2018-03-10 16:04:27,296 - INFO <set_agents> 
+2018-03-10 16:04:29,045 - INFO <set_agents> Density: 0.3579174539466277
+2018-03-10 16:04:29,150 - INFO <configure> 
+2018-03-10 16:04:29,178 - INFO <configure_queuing> 
+2018-03-10 16:04:31,036 - INFO <start> 
+2018-03-10 16:04:31,065 - INFO <run> MultiAgent Starting
+2018-03-10 16:05:24,415 - INFO <main> Platform: Linux-4.4.0-116-generic-x86_64-with-debian-stretch-sid
+2018-03-10 16:05:24,416 - INFO <main> Path: /u/51/avonscha/data/Desktop/Koodit PNASia varten/model_without_game
+2018-03-10 16:05:24,416 - INFO <main> Python: 3.4.5
+2018-03-10 16:05:24,417 - INFO <gui> Starting GUI
+2018-03-10 16:05:27,481 - INFO <configure_plot> 
+2018-03-10 16:05:27,496 - INFO <configure_signals> 
+2018-03-10 16:05:29,591 - INFO <set_sidebar> room_evacuation_game
+2018-03-10 16:05:29,592 - INFO <clear_sidebar> 
+2018-03-10 16:05:30,980 - INFO <set_simulation> 
+2018-03-10 16:05:30,981 - INFO <reset_buffers> 
+2018-03-10 16:05:30,994 - INFO <set_field> 
+2018-03-10 16:05:31,658 - INFO <set_algorithms> 
+2018-03-10 16:05:45,194 - INFO <set_body> In: 200, adult
+2018-03-10 16:05:49,175 - INFO <set_model> circular
+2018-03-10 16:05:49,255 - INFO <set_agents> 
+2018-03-10 16:05:51,043 - INFO <set_agents> Density: 0.3597264937558312
+2018-03-10 16:05:51,155 - INFO <configure> 
+2018-03-10 16:05:51,182 - INFO <configure_queuing> 
+2018-03-10 16:05:53,128 - INFO <start> 
+2018-03-10 16:05:53,148 - INFO <run> MultiAgent Starting
+2018-03-10 16:06:46,376 - INFO <main> Platform: Linux-4.4.0-116-generic-x86_64-with-debian-stretch-sid
+2018-03-10 16:06:46,377 - INFO <main> Path: /u/51/avonscha/data/Desktop/Koodit PNASia varten/model_without_game
+2018-03-10 16:06:46,377 - INFO <main> Python: 3.4.5
+2018-03-10 16:06:46,377 - INFO <gui> Starting GUI
+2018-03-10 16:06:49,405 - INFO <configure_plot> 
+2018-03-10 16:06:49,419 - INFO <configure_signals> 
+2018-03-10 16:06:52,446 - INFO <set_sidebar> room_evacuation_game
+2018-03-10 16:06:52,448 - INFO <clear_sidebar> 
+2018-03-10 16:06:53,442 - INFO <set_simulation> 
+2018-03-10 16:06:53,444 - INFO <reset_buffers> 
+2018-03-10 16:06:53,455 - INFO <set_field> 
+2018-03-10 16:06:54,127 - INFO <set_algorithms> 
+2018-03-10 16:07:08,110 - INFO <set_body> In: 200, adult
+2018-03-10 16:07:12,107 - INFO <set_model> circular
+2018-03-10 16:07:12,186 - INFO <set_agents> 
+2018-03-10 16:07:13,955 - INFO <set_agents> Density: 0.35478967058492256
+2018-03-10 16:07:14,062 - INFO <configure> 
+2018-03-10 16:07:14,089 - INFO <configure_queuing> 
+2018-03-10 16:07:16,259 - INFO <start> 
+2018-03-10 16:07:16,275 - INFO <run> MultiAgent Starting
+2018-03-10 16:07:58,253 - INFO <main> Platform: Linux-4.4.0-116-generic-x86_64-with-debian-stretch-sid
+2018-03-10 16:07:58,254 - INFO <main> Path: /u/51/avonscha/data/Desktop/Koodit PNASia varten/model_without_game
+2018-03-10 16:07:58,254 - INFO <main> Python: 3.4.5
+2018-03-10 16:07:58,255 - INFO <gui> Starting GUI
+2018-03-10 16:08:01,270 - INFO <configure_plot> 
+2018-03-10 16:08:01,284 - INFO <configure_signals> 
+2018-03-10 16:08:04,535 - INFO <set_sidebar> room_evacuation_game
+2018-03-10 16:08:04,536 - INFO <clear_sidebar> 
+2018-03-10 16:08:06,395 - INFO <set_simulation> 
+2018-03-10 16:08:06,399 - INFO <reset_buffers> 
+2018-03-10 16:08:06,413 - INFO <set_field> 
+2018-03-10 16:08:07,135 - INFO <set_algorithms> 
+2018-03-10 16:08:20,900 - INFO <set_body> In: 200, adult
+2018-03-10 16:08:24,891 - INFO <set_model> circular
+2018-03-10 16:08:24,974 - INFO <set_agents> 
+2018-03-10 16:08:26,780 - INFO <set_agents> Density: 0.36753184811097733
+2018-03-10 16:08:26,888 - INFO <configure> 
+2018-03-10 16:08:26,913 - INFO <configure_queuing> 
+2018-03-10 16:08:28,422 - INFO <start> 
+2018-03-10 16:08:28,447 - INFO <run> MultiAgent Starting
+2018-03-10 16:09:09,331 - INFO <main> Platform: Linux-4.4.0-116-generic-x86_64-with-debian-stretch-sid
+2018-03-10 16:09:09,332 - INFO <main> Path: /u/51/avonscha/data/Desktop/Koodit PNASia varten/model_without_game
+2018-03-10 16:09:09,332 - INFO <main> Python: 3.4.5
+2018-03-10 16:09:09,332 - INFO <gui> Starting GUI
+2018-03-10 16:09:12,473 - INFO <configure_plot> 
+2018-03-10 16:09:12,492 - INFO <configure_signals> 
+2018-03-10 16:09:15,171 - INFO <set_sidebar> room_evacuation_game
+2018-03-10 16:09:15,172 - INFO <clear_sidebar> 
+2018-03-10 16:09:16,372 - INFO <set_simulation> 
+2018-03-10 16:09:16,372 - INFO <reset_buffers> 
+2018-03-10 16:09:16,381 - INFO <set_field> 
+2018-03-10 16:09:17,059 - INFO <set_algorithms> 
+2018-03-10 16:09:30,760 - INFO <set_body> In: 200, adult
+2018-03-10 16:09:34,779 - INFO <set_model> circular
+2018-03-10 16:09:34,859 - INFO <set_agents> 
+2018-03-10 16:09:36,711 - INFO <set_agents> Density: 0.36799971695813993
+2018-03-10 16:09:36,818 - INFO <configure> 
+2018-03-10 16:09:36,844 - INFO <configure_queuing> 
+2018-03-10 16:09:38,546 - INFO <start> 
+2018-03-10 16:09:38,575 - INFO <run> MultiAgent Starting
+2018-03-10 16:10:15,236 - INFO <main> Platform: Linux-4.4.0-116-generic-x86_64-with-debian-stretch-sid
+2018-03-10 16:10:15,237 - INFO <main> Path: /u/51/avonscha/data/Desktop/Koodit PNASia varten/model_without_game
+2018-03-10 16:10:15,237 - INFO <main> Python: 3.4.5
+2018-03-10 16:10:15,238 - INFO <gui> Starting GUI
+2018-03-10 16:10:18,281 - INFO <configure_plot> 
+2018-03-10 16:10:18,295 - INFO <configure_signals> 
+2018-03-10 16:10:20,794 - INFO <set_sidebar> room_evacuation_game
+2018-03-10 16:10:20,795 - INFO <clear_sidebar> 
+2018-03-10 16:10:22,257 - INFO <set_simulation> 
+2018-03-10 16:10:22,258 - INFO <reset_buffers> 
+2018-03-10 16:10:22,274 - INFO <set_field> 
+2018-03-10 16:10:22,941 - INFO <set_algorithms> 
+2018-03-10 16:10:36,983 - INFO <set_body> In: 200, adult
+2018-03-10 16:10:40,906 - INFO <set_model> circular
+2018-03-10 16:10:40,985 - INFO <set_agents> 
+2018-03-10 16:10:42,796 - INFO <set_agents> Density: 0.3597971828291312
+2018-03-10 16:10:42,907 - INFO <configure> 
+2018-03-10 16:10:42,935 - INFO <configure_queuing> 
+2018-03-10 16:10:45,152 - INFO <start> 
+2018-03-10 16:10:45,171 - INFO <run> MultiAgent Starting
+2018-03-10 16:13:59,542 - INFO <main> Platform: Linux-4.4.0-116-generic-x86_64-with-debian-stretch-sid
+2018-03-10 16:13:59,543 - INFO <main> Path: /u/51/avonscha/data/Desktop/Koodit PNASia varten/model_without_game
+2018-03-10 16:13:59,543 - INFO <main> Python: 3.4.5
+2018-03-10 16:13:59,543 - INFO <gui> Starting GUI
+2018-03-10 16:14:02,667 - INFO <configure_plot> 
+2018-03-10 16:14:02,681 - INFO <configure_signals> 
+2018-03-10 16:14:05,715 - INFO <set_sidebar> room_evacuation_game
+2018-03-10 16:14:05,717 - INFO <clear_sidebar> 
+2018-03-10 16:14:07,381 - INFO <set_simulation> 
+2018-03-10 16:14:07,382 - INFO <reset_buffers> 
+2018-03-10 16:14:07,395 - INFO <set_field> 
+2018-03-10 16:14:08,073 - INFO <set_algorithms> 
+2018-03-10 16:14:21,926 - INFO <set_body> In: 200, adult
+2018-03-10 16:14:25,942 - INFO <set_model> circular
+2018-03-10 16:14:26,024 - INFO <set_agents> 
+2018-03-10 16:14:27,852 - INFO <set_agents> Density: 0.36733903979113497
+2018-03-10 16:14:27,968 - INFO <configure> 
+2018-03-10 16:14:27,996 - INFO <configure_queuing> 
+2018-03-10 16:14:30,429 - INFO <start> 
+2018-03-10 16:14:30,442 - INFO <run> MultiAgent Starting
+2018-03-10 16:16:12,717 - INFO <main> Platform: Linux-4.4.0-116-generic-x86_64-with-debian-stretch-sid
+2018-03-10 16:16:12,718 - INFO <main> Path: /u/51/avonscha/data/Desktop/Koodit PNASia varten/model_without_game
+2018-03-10 16:16:12,718 - INFO <main> Python: 3.4.5
+2018-03-10 16:16:12,719 - INFO <gui> Starting GUI
+2018-03-10 16:16:15,785 - INFO <configure_plot> 
+2018-03-10 16:16:15,798 - INFO <configure_signals> 
+2018-03-10 16:16:17,607 - INFO <set_sidebar> room_evacuation_game
+2018-03-10 16:16:17,612 - INFO <clear_sidebar> 
+2018-03-10 16:16:18,881 - INFO <set_simulation> 
+2018-03-10 16:16:18,882 - INFO <reset_buffers> 
+2018-03-10 16:16:18,901 - INFO <set_field> 
+2018-03-10 16:16:19,627 - INFO <set_algorithms> 
+2018-03-10 16:16:33,568 - INFO <set_body> In: 200, adult
+2018-03-10 16:16:37,538 - INFO <set_model> circular
+2018-03-10 16:16:37,615 - INFO <set_agents> 
+2018-03-10 16:16:39,436 - INFO <set_agents> Density: 0.3586919624918268
+2018-03-10 16:16:39,556 - INFO <configure> 
+2018-03-10 16:16:39,589 - INFO <configure_queuing> 
+2018-03-10 16:16:41,990 - INFO <start> 
+2018-03-10 16:16:42,013 - INFO <run> MultiAgent Starting
+2018-03-10 16:19:04,513 - INFO <main> Platform: Linux-4.4.0-116-generic-x86_64-with-debian-stretch-sid
+2018-03-10 16:19:04,514 - INFO <main> Path: /u/51/avonscha/data/Desktop/Koodit PNASia varten/model_without_game
+2018-03-10 16:19:04,514 - INFO <main> Python: 3.4.5
+2018-03-10 16:19:04,514 - INFO <gui> Starting GUI
+2018-03-10 16:19:07,572 - INFO <configure_plot> 
+2018-03-10 16:19:07,587 - INFO <configure_signals> 
+2018-03-10 16:19:10,437 - INFO <set_sidebar> room_evacuation_game
+2018-03-10 16:19:10,438 - INFO <clear_sidebar> 
+2018-03-10 16:19:11,723 - INFO <set_simulation> 
+2018-03-10 16:19:11,724 - INFO <reset_buffers> 
+2018-03-10 16:19:11,740 - INFO <set_field> 
+2018-03-10 16:19:12,419 - INFO <set_algorithms> 
+2018-03-10 16:19:26,096 - INFO <set_body> In: 200, adult
+2018-03-10 16:19:30,160 - INFO <set_model> circular
+2018-03-10 16:19:30,241 - INFO <set_agents> 
+2018-03-10 16:19:32,081 - INFO <set_agents> Density: 0.36285984590606685
+2018-03-10 16:19:32,205 - INFO <configure> 
+2018-03-10 16:19:32,234 - INFO <configure_queuing> 
+2018-03-10 16:19:33,992 - INFO <start> 
+2018-03-10 16:19:34,009 - INFO <run> MultiAgent Starting
+2018-03-10 16:20:36,373 - INFO <stop> 
+2018-03-10 16:20:36,374 - INFO <stop> MultiAgent Exit...
+2018-03-10 16:20:36,395 - INFO <run> MultiAgent Stopping
+2018-03-10 16:20:36,465 - INFO <reset_buffers> 
+2018-03-10 16:20:38,445 - INFO <gui> Finishing GUI
+
