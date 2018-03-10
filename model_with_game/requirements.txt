@@ -1,0 +1,15 @@
+numpy
+numba
+scipy
+scikit-image
+shapely
+matplotlib
+pyqt
+pyqtgraph
+h5py
+yaml
+pandas
+ruamel.yaml
+scikit-fmm
+typing
+nose
