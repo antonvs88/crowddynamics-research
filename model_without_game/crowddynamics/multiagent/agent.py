@@ -156,10 +156,10 @@ class Agent(object):
         self.sight_wall = 3.0  # Interaction distance with walls
 
         # Motion related parameters unique to Helbing's model
-        self.A_agent = A_agent
-        self.B_agent = B_agent
-        self.A_wall = A_wall
-        self.B_wall = B_wall
+        self.A_agent = A_agent.astype(float64)
+        self.B_agent = B_agent.astype(float64)
+        self.A_wall = A_wall.astype(float64)
+        self.B_wall = B_wall.astype(float64)
         self.anisotropy_agent = 0.5
         self.anisotropy_wall = 0.2
 
