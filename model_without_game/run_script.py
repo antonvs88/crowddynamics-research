@@ -22,6 +22,7 @@ process = simulation(queue, **d["kwargs"])
 args = [(("agent", "agent"),
          ["position", "active", "position_ls", "position_rs"])]
 
+# Since the game is not played, the strategies are not saved.
 if process.game is not None:
     args.append((("game", "agent"), ["strategy"]))
 
