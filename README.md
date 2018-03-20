@@ -1,5 +1,5 @@
 # crowddynamics-research
-Codes for the simulation model presented in von Schantz & Ehtamo "Overtaking others in a spatial game of egress congestion", analysis of the data and producing figures in the article. Codes are based on my summer worker Jaan Tollander's codes https://github.com/jaantollander/crowddynamics, created when he was working as a research assistant in our research group in Aalto University School of Science, Department of Mathematics and Systems Analysis in summer 2016.
+Codes used in research in von Schantz & Ehtamo "Overtaking others in a spatial game of egress congestion". The repository includes code for simulation, data analysis and visual representation of data. The repository is based on my summer worker Jaan Tollander's codes https://github.com/jaantollander/crowddynamics, which where created when he was working as a research assistant in our research group in Aalto University School of Science, Department of Mathematics and Systems Analysis in summer 2016.
 
 The folders in the repository includes:
 * data_analysis contains the codes used for data analysis and producing the figures in the article von Schantz & Ehtamo "Overtaking others in a spatial game of egress congestion"
