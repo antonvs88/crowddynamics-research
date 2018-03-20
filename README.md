@@ -6,3 +6,5 @@ The folders in the repository includes:
 * model_with_game contains the codes for the simulation model with game.
 * model_without_game contains the code for the simulation model without the game.
 * model_with_fixed_strategies contains the simulation model, where there are different strategists and they are strategies are fixed, i.e., they do not play the game.
+
+See the "readme.txt" file in each folder for instructions to use the codes.
