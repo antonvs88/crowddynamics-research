@@ -14,8 +14,9 @@ import matplotlib.ticker
 from matplotlib.ticker import FormatStrFormatter
 from matplotlib.ticker import ScalarFormatter
 
-# Folders containing the field data averaged over time and sample for different scenarios.
-mylist = ['taset0_normi', 'taset80_normi', 'taset125_normi', 'taset150_normi', 'taset220_normi', 'taset350_normi', 'taset500_normi', 'taset1000_normi', 'vd1_A2000_normi', 'overtaking']
+# Folders containing the field data averaged over time and sample for different scenarios (npy.gz format).
+# NOTE: Check that the location is correct!
+mylist = ['taset0', 'taset80', 'taset125', 'taset150', 'taset220', 'taset350', 'taset500', 'taset1000', 'vd1_A2000', 'overtaking']
 
 # Figure titles
 titles = [r'$T_{ASET}=0$', r'$T_{ASET}=80$', r'$T_{ASET}=125$', r'$T_{ASET}=150$', r'$T_{ASET}=220', r'$T_{ASET}=350$', r'$T_{ASET}=500$', r'$T_{ASET}=1000$', 'all impatient']
@@ -24,9 +25,12 @@ faces = ['red', 'cyan', 'none', 'magenta', 'none', 'none', 'blue'] # scatter plo
 edges = ['darkred', 'c', 'none', 'm', 'none', 'none', 'darkblue'] # scatter plot marker edge color (elements 0,1,3,6 are used)
 markers = ["^", "v", ".", "s", ".",".", "^"] # scatter plot marker types (elements 0,1,3,6 are used)
 
+# Number of agents in room initially
+n_a = 200
+
 # Simulations used in the plots
 run_start = 0
-run_end = 50
+run_end = 100
 run_len = run_end - run_start
 
 # An arbitrary upper limit given to the number of seconds it takes for the crowd to evacuate
@@ -35,23 +39,15 @@ arbitrary_end = 600
 interval = 0.1
 time_len = int(arbitrary_end / interval) # number of time steps
 
-# We calculate the flow and time lapse distribution for the whole simulation
-stat_reg_start = 0
-stat_reg_end = 200
-stat_reg_length = stat_reg_end - stat_reg_start
-
 # Arrays to store data used in plots
 time_steps_lst = np.arange(0, arbitrary_end, interval) # array for time steps
-start_times_lst = np.zeros((len(mylist) - 1, run_len)) # array for initial time for each scenario and simulation (not needed if full evacuation used)
 end_times_lst = np.zeros((len(mylist) - 1, run_len)) # array for end time for each scenario and simulation
+strat_lst = np.zeros((len(mylist) - 2, run_len)) # array for proportion of imp. peds. when 10 pedestrians have evacuated
 impatients = 0 * np.ones((run_len, time_len)) # array for number of impatient pedestrians in the room (for scenario with fixed strategies)
 patients = 0 * np.ones((run_len, time_len)) # array for number of patient pedestrians in the room (for scenario with fixed strategies)
 avg_init_prop = np.zeros(len(mylist) - 1) # average initial proportion of impatient agents (for scenarios with game)
 avg_flow = np.zeros(len(mylist) - 1) # average flow over whole evacuation (for scenarios with game)
 sem = np.zeros(len(mylist) - 1) # standard mean error of flow for whole evacuation (for scenarios with game)
-
-# Data of the initial proportion of impatient pedestrians in simulations with the game have been stored in 'strats.npy.gz'. Load that data. 
-strat_lst = np.loadtxt('strats.npy.gz')
 
 # Initialize the figure
 grid_cell = 10.5
@@ -73,7 +69,7 @@ ax2 = plt.subplot(G[0:int(np.floor(grid_cell))-y_disp, int(np.ceil(grid_cell))+x
 for i in range(0, len(mylist)):
 
     # Time lapses array contains the points in time when a pedestrian has exited the room.
-    time_lapses = np.zeros((run_len * stat_reg_end))
+    time_lapses = np.zeros((run_len * n_a))
     t = 0 # help variable for time lapses vector
 
     # Loop through all the simulations
@@ -86,8 +82,11 @@ for i in range(0, len(mylist)):
             if i < 9:
                 end_times_lst[i,j] = time_tot[-1]
 
+        # Data of pedestrians in the room at different times (0="not in room", 1="in room").
+        if os.path.exists("{}{}{}{}{}".format(mylist[i], '/', 'in_room1', j, '.npy.gz')):
+            in_room1 = np.loadtxt("{}{}{}{}{}".format(mylist[i], '/', 'in_room1', j, '.npy.gz'))
+
         # For simulations with the game, open data for number of pedestrians that have left the room.
-        # This could have been obviously calculated from the "in_room1" array as well.
         if i < 9:
             if os.path.exists("{}{}{}{}{}".format(mylist[i], '/', 'in_goal', j, '.npy.gz')):
                 in_goal = np.loadtxt("{}{}{}{}{}".format(mylist[i], '/', 'in_goal', j, '.npy.gz'))
@@ -115,17 +114,36 @@ for i in range(0, len(mylist)):
             time_lapses[t:t+len(in_goal_times)-1] = np.ediff1d(in_goal_times)
             t += len(in_goal_times) - 1
 
+        # Data of strategies of pedestrians in the room at different times (0="impatient", 1="patient")
+        if os.path.exists("{}{}{}{}{}".format(mylist[i], '/', 'strategy', j, '.npy.gz')):
+            strategy = np.loadtxt("{}{}{}{}{}".format(mylist[i], '/', 'strategy', j, '.npy.gz'))
+
+        # Calculate the proportion of impatient pedestrians in the room after 10 pedestrians have evacuated,
+        # i.e., approximately at the time when the crowd has formed a half-circle in front of the exit.
+        if i < 8:
+            # The time step when the 10th pedestrian has evacuated
+            ind_stat_start = np.where(in_goal == 10)
+        
+            # Take into account that the 10th and 11th pedestrians might evacuate simultaneously
+            if len(ind_stat_start[0]) == 0:
+                ind_stat_start = np.where(in_goal == 11)
+
+            if len(ind_stat_start[0]) > 1:
+                ind_stat_start = ind_stat_start[0][0]
+            else:
+                ind_stat_start = ind_stat_start[0][0]
+
+            # Which pedestrians are in the room, when 10 pedestrians have exited.
+            start_in_room = np.where(in_room1[ind_stat_start, :] == 1)[0]
+
+            # Proportion of impatient pedestrians in the room, when 10 pedestrians have exited.
+            #print(strategy[ind_stat_start, start_in_room])
+            strat_lst[i,j] = 1 - np.sum(strategy[ind_stat_start, start_in_room]) / np.sum(in_room1[ind_stat_start, :])
+
         # For the simulation with fixed strategies calculate the proportion of impatient pedestrians
         # in the room at every time step.
         if i == 9:
-            # Data of strategies of pedestrians in the room at different times (0="impatient", 1="patient")
-            if os.path.exists("{}{}{}{}{}".format(mylist[i], '/', 'strategy', j, '.npy.gz')):
-                strategy = np.loadtxt("{}{}{}{}{}".format(mylist[i], '/', 'strategy', j, '.npy.gz'))
 
-            # Data of pedestrians in the room at different times (0="not in room", 1="in room").
-            if os.path.exists("{}{}{}{}{}".format(mylist[i], '/', 'in_room1', j, '.npy.gz')):
-                in_room1 = np.loadtxt("{}{}{}{}{}".format(mylist[i], '/', 'in_room1', j, '.npy.gz'))
- 
             iterations = time_tot.shape[0] # number of time steps in the simulations alltogether
             impatient_inroom = np.zeros(iterations) # number of impatient pedestrians in room at different times
             patient_inroom = np.zeros(iterations) # number of patient pedestrians in room at different times
@@ -143,7 +161,10 @@ for i in range(0, len(mylist)):
     # Plot time lapse survival functions for Taset=0, 80, 150, 500
     # time lapse resolution 0.1, because sample step 0.1
     if i in {0,1,3,6}:
-        # Modify time lapses data so that np.unique can be used on ite
+        # Modify time lapses data so that np.unique can be used on them
+        #print(titles[i]) # print scenario name
+        #print(np.mean(time_lapses[0:t])) # print mean of time lapses
+        #print(np.std(time_lapses[0:t])/np.sqrt(len(time_lapses[0:t]))) # print standard error of mean
         time_lapses = np.array(time_lapses[0:t])*10 # time lapses multiplied by 10 (get to int)
         time_lapses = time_lapses.astype(int) # change type to int
         time_lapses = np.sort(time_lapses) # sort datapoints
