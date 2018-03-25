@@ -11,8 +11,12 @@ import os
 from shapely.geometry import Point, Polygon, LineString
 from mpl_toolkits.axes_grid1 import ImageGrid
 
+# Room dimensions
+width = 20
+height = 20
+
 # Names of folders containing the strategy data for different scenarios.
-mylist = ['taset0_normi', 'taset80_normi', 'taset150_normi', 'taset500_normi']
+mylist = ['taset0', 'taset80', 'taset150', 'taset500']
 
 # Figure titles
 titles = [r'$T_{ASET}$=0', r'$T_{ASET}$=80', r'$T_{ASET}$=150', r'$T_{ASET}$=500']
@@ -26,43 +30,44 @@ cmap = colors.ListedColormap(['red', 'blue'])
 bounds=[0,0.5,1]
 norm = colors.BoundaryNorm(bounds, cmap.N)
 
-# The simulation which data is used to plot the equilibria
-j = 0
+# The simulation which data is used to plot the equilibria (qualitatively the equilibria for different
+# simulations look the same.
+j = 99
 
 # Loop through the different scenarios
 for i in range(0,4):
 
-        # Load data of which pedestrians are in the room
-        if os.path.exists("{}{}{}{}{}".format(mylist[i], '/', 'in_room1', j, '.npy.gz')):
-            in_room = np.loadtxt("{}{}{}{}{}".format(mylist[i], '/', 'in_room1', j, '.npy.gz'))
-            sum_in_room = np.sum(in_room, axis=1)
+    # Load data of which pedestrians are in the room
+    if os.path.exists("{}{}{}{}{}".format(mylist[i], '/', 'in_room1', j, '.npy.gz')):
+        in_room = np.loadtxt("{}{}{}{}{}".format(mylist[i], '/', 'in_room1', j, '.npy.gz'))
+        sum_in_room = np.sum(in_room, axis=1)
 
-            # Time when 10 pedestrians have exited
-            time_stat_reg_start = np.where(sum_in_room == 190)[0][0]
+        # Time when 10 pedestrians have exited
+        time_stat_reg_start = np.where(sum_in_room == 190)[0][0]
 
-            # Pedestrians in room when 10 pedestrians have exited
-            agents_in_room = np.where(in_room[time_stat_reg_start, :] == 1)[0]
+        # Pedestrians in room when 10 pedestrians have exited
+        agents_in_room = np.where(in_room[time_stat_reg_start, :] == 1)[0]
 
-        # Load pedestrian's x-positions
-        if os.path.exists("{}{}{}{}{}".format(mylist[i], '/', 'positions_x', j, '.npy.gz')):
-            positions_x = np.loadtxt("{}{}{}{}{}".format(mylist[i], '/', 'positions_x', j, '.npy.gz'))
-            positions_x = positions_x[0::2]
+    # Load pedestrian's x-positions
+    if os.path.exists("{}{}{}{}{}".format(mylist[i], '/', 'positions_x', j, '.npy.gz')):
+        positions_x = np.loadtxt("{}{}{}{}{}".format(mylist[i], '/', 'positions_x', j, '.npy.gz'))
+        positions_x = positions_x[0::2]
 
-            # Which pedestrians have exited the room
-            outside_room = np.where(in_room[time_stat_reg_start, :] == 0)[0]
+        # Which pedestrians have exited the room
+        outside_room = np.where(in_room[time_stat_reg_start, :] == 0)[0]
 
-        # Load pedestrian's y-positions
-        if os.path.exists("{}{}{}{}{}".format(mylist[i], '/', 'positions_y', j, '.npy.gz')):
-            positions_y = np.loadtxt("{}{}{}{}{}".format(mylist[i], '/', 'positions_y', j, '.npy.gz'))
-            positions_y = positions_y[0::2]
+    # Load pedestrian's y-positions
+    if os.path.exists("{}{}{}{}{}".format(mylist[i], '/', 'positions_y', j, '.npy.gz')):
+        positions_y = np.loadtxt("{}{}{}{}{}".format(mylist[i], '/', 'positions_y', j, '.npy.gz'))
+        positions_y = positions_y[0::2]
 
-        # Load pedestrian's radii
-        if os.path.exists("{}{}{}{}{}".format(mylist[i], '/', 'radius', j, '.npy.gz')):
-            radius = np.loadtxt("{}{}{}{}{}".format(mylist[i], '/', 'radius', j, '.npy.gz'))
+    # Load pedestrian's radii
+    if os.path.exists("{}{}{}{}{}".format(mylist[i], '/', 'radius', j, '.npy.gz')):
+        radius = np.loadtxt("{}{}{}{}{}".format(mylist[i], '/', 'radius', j, '.npy.gz'))
 
-        # Load pedestrian's strategies
-        if os.path.exists("{}{}{}{}{}".format(mylist[i], '/', 'strategy', j, '.npy.gz')):
-            strategy = np.loadtxt("{}{}{}{}{}".format(mylist[i], '/', 'strategy', j, '.npy.gz'))
+    # Load pedestrian's strategies
+    if os.path.exists("{}{}{}{}{}".format(mylist[i], '/', 'strategy', j, '.npy.gz')):
+        strategy = np.loadtxt("{}{}{}{}{}".format(mylist[i], '/', 'strategy', j, '.npy.gz'))
 
     # Create circles based on pedestrian's positions and radius
     patches = []

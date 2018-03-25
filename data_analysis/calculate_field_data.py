@@ -51,15 +51,15 @@ d_norm = np.sqrt(direction[:,:,0] * direction[:,:,0] + direction[:,:,1] * direct
 chunk = 1000 # chunk size
 
 # The outer loop goes through the folders. The data from the simulations should be stored there in .npy.gz format.
-mylist = ['vd1_A2000_normi'] # name of the folder, where the data is; can be an array of folders
+mylist = ['taset0'] # name of the folder, where the data is; can be an array of folders
 for i in range(0, len(mylist)):
 
     # The inner loop goes through the simulations (in this case it goes through just one simulation)
     for j in range(int(sys.argv[1]), int(sys.argv[1]) + 1):
 
 	# Data of pedestrians in the room at different times (0="not in room", 1="in room").
-        if os.path.exists("{}{}{}{}{}".format(mylist[i], '/', 'in_room1', j, '.npy.gz')):
-            in_room = np.loadtxt("{}{}{}{}{}".format(mylist[i], '/', 'in_room1', j, '.npy.gz'))
+        if os.path.exists("{}{}{}{}{}{}".format('simulation_data/', mylist[i], '/', 'in_room1', j, '.npy.gz')):
+            in_room = np.loadtxt("{}{}{}{}{}{}".format('simulation_data/', mylist[i], '/', 'in_room1', j, '.npy.gz'))
 
         # Calculate number of pedestrians in room at different times
         sum_in_room = np.sum(in_room, axis=1)
@@ -131,23 +131,23 @@ for i in range(0, len(mylist)):
 
 	# Data of x-positions of pedestrians at different times.
         # NOTE! The data is sampled at a finer resolution, thus we take only every second element of the array.
-        if os.path.exists("{}{}{}{}{}".format(mylist[i], '/', 'positions_x', j, '.npy.gz')):
-            positions_x = np.loadtxt("{}{}{}{}{}".format(mylist[i], '/', 'positions_x', j, '.npy.gz'))
+        if os.path.exists("{}{}{}{}{}{}".format('simulation_data/', mylist[i], '/', 'positions_x', j, '.npy.gz')):
+            positions_x = np.loadtxt("{}{}{}{}{}{}".format('simulation_data/', mylist[i], '/', 'positions_x', j, '.npy.gz'))
             positions_x = positions_x[0::2] # take every second element
 
         # Data of y-positions of pedestrians at different times.
         # NOTE! The data is sampled at a finer resolution, thus we take only every second element of the array.
-        if os.path.exists("{}{}{}{}{}".format(mylist[i], '/', 'positions_y', j, '.npy.gz')):
-            positions_y = np.loadtxt("{}{}{}{}{}".format(mylist[i], '/', 'positions_y', j, '.npy.gz'))
+        if os.path.exists("{}{}{}{}{}{}".format('simulation_data/', mylist[i], '/', 'positions_y', j, '.npy.gz')):
+            positions_y = np.loadtxt("{}{}{}{}{}{}".format('simulation_data/', mylist[i], '/', 'positions_y', j, '.npy.gz'))
             positions_y = positions_y[0::2] # take every second element
 
         # Data of pedestrians' velocities x-component at different times.
-        if os.path.exists("{}{}{}{}{}".format(mylist[i], '/', 'velocities_x', j, '.npy.gz')):
-            velocities_x = np.loadtxt("{}{}{}{}{}".format(mylist[i], '/', 'velocities_x', j, '.npy.gz'))
+        if os.path.exists("{}{}{}{}{}{}".format('simulation_data/', mylist[i], '/', 'velocities_x', j, '.npy.gz')):
+            velocities_x = np.loadtxt("{}{}{}{}{}{}".format('simulation_data/', mylist[i], '/', 'velocities_x', j, '.npy.gz'))
 
         # Data of pedestrians' velocities y-component at different times.
-        if os.path.exists("{}{}{}{}{}".format(mylist[i], '/', 'velocities_y', j, '.npy.gz')):
-            velocities_y = np.loadtxt("{}{}{}{}{}".format(mylist[i], '/', 'velocities_y', j, '.npy.gz'))
+        if os.path.exists("{}{}{}{}{}{}".format('simulation_data/', mylist[i], '/', 'velocities_y', j, '.npy.gz')):
+            velocities_y = np.loadtxt("{}{}{}{}{}{}".format('simulation_data/', mylist[i], '/', 'velocities_y', j, '.npy.gz'))
 
         # Arrays to save the micro-macro converted data
         velocity_x = np.zeros((time_interval4_end - time_interval1_start, n, m), dtype=np.float16) # velocity x-component
@@ -240,7 +240,8 @@ for i in range(0, len(mylist)):
     np.save("{}{}{}{}{}{}".format('fields/', mylist[i], '/', 'intervals', j, '.npy'), intervals)
 
     # Save the macroscopic data of speed, density and radial speed in .hdf5 format for each time interval
-    # NOTE: The data is not averaged over time
+    # NOTE: The data is not averaged over time. The averaging is done in "average_fields.py". If one wants
+    # to save space the averaging should be performed already in this code.
 
     # First interval (190...145 agents in the room)
     with h5py.File("{}{}{}{}{}{}".format('fields/', mylist[i], '/', 'speed_interval1', j, '.hdf5'), 'w') as hf1:

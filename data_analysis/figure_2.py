@@ -11,6 +11,10 @@ import os
 from shapely.geometry import Point, Polygon, LineString
 from mpl_toolkits.axes_grid1 import ImageGrid
 
+# Room dimensions
+width = 20
+height = 20
+
 # Number of pedestrians in room initially
 n_a = 1000
 
@@ -62,7 +66,7 @@ for k in agents_in_room:
 # Change figure settings
 ax = plt.gca()
 ax.set_xlim([5.53, 34.43])
-ax.set_ylim([-2, 14.10])
+ax.set_ylim([-21, -5.92])
 ax.get_xaxis().set_visible(False)
 ax.get_yaxis().set_visible(False)
 ax.set_aspect('equal')
@@ -79,52 +83,51 @@ p.set_array(strategy[time_stat_reg_start, agents_in_room])
 ax.add_collection(p)
 
 # Add legend
-ax.add_patch(ptch.Circle((6.1,13.5), 0.5, edgecolor='black', facecolor='red', lw=0.2),)
-ax.add_patch(ptch.Circle((6.1,12.1), 0.5, edgecolor='black', facecolor='blue', lw=0.2),)
-ax.text(7.1, 13.1, 'Impatient', fontsize=20)
-ax.text(7.1, 11.7, 'Patient', fontsize=20)
-
+ax.add_patch(ptch.Circle((6.1,-6.6), 0.5, edgecolor='black', facecolor='red', lw=0.2),)
+ax.add_patch(ptch.Circle((6.1,-8), 0.5, edgecolor='black', facecolor='blue', lw=0.2),)
+ax.text(6.8, -7, 'Impatient', fontsize=20)
+ax.text(6.8, -8.5, 'Patient', fontsize=20)
 
 # Plot a "bottom floor"
-floor_left_x = np.arange(-1,19.8,0.1)
-floor_left_y = -0.08*np.ones(208)
-floor_right_x = np.arange(21.1,42,0.1)
-floor_right_y = -0.08*np.ones(209)
-plt.plot(floor_left_x, floor_left_y, color='black', linewidth=2.5)
-plt.plot(floor_right_x, floor_right_y, color='black', linewidth=2.5)
+floor_left_x = np.arange(5.5,19.5,0.1)
+floor_left_y = -20.08*np.ones(len(floor_left_x))
+floor_right_x = np.arange(21.5,34.5,0.1)
+floor_right_y = -20.08*np.ones(len(floor_right_x))
+ax.plot(floor_left_x, floor_left_y, color='black', linewidth=2.5)
+ax.plot(floor_right_x, floor_right_y, color='black', linewidth=2.5)
 
 # Plot 3 half-circles
 x0 = 20.3
-y0 = 0
+y0 = -20
 radius0 = 9
 x = np.arange(x0-radius0,x0+radius0,0.001)
 y = np.sqrt(radius0**2-(x-x0)**2) + y0
-plt.plot(x, y, color='black', linewidth=5)
+ax.plot(x, y, color='black', linewidth=5)
 
 x1 = 20.3
-y1 = 0
+y1 = -20
 radius1 = 6.5
 x = np.arange(x1-radius1,x1+radius1,0.001)
 y = np.sqrt(radius1**2-(x-x1)**2) + y1
-plt.plot(x, y, color='black', linewidth=5)
+ax.plot(x, y, color='black', linewidth=5)
 
 x2 = 20.3
-y2 = 0
+y2 = -20
 radius2 = 3.5
 x = np.arange(x2-radius2,x2+radius2,0.001)
 y = np.sqrt(radius2**2-(x-x2)**2) + y2
-plt.plot(x, y, color='black', linewidth=5)
+ax.plot(x, y, color='black', linewidth=5)
 
 # Plot black rectangle to represent the exit
-ax.add_patch(ptch.Rectangle((19.3,-0.7), 2.4,0.7, edgecolor='black', facecolor='black'),)
+ax.add_patch(ptch.Rectangle((19.3,-20.73), 2.4,0.7, edgecolor='black', facecolor='black'),)
 
 # Plot EXIT sign
-plt.text(18.85, -2, 'EXIT', fontsize=20, fontweight='bold')
+ax.text(18.85, -22, 'EXIT', fontsize=20, fontweight='bold')
 
 # Label the half-circles
-plt.text(x0-radius0-0.5, -1.4, 'A', fontsize=20, fontweight='bold')
-plt.text(x1-radius1-0.5, -1.4, 'B', fontsize=20, fontweight='bold')
-plt.text(x2-radius2-0.5, -1.4, 'C', fontsize=20, fontweight='bold')
+ax.text(x0-radius0-0.5, -21.4, 'A', fontsize=20, fontweight='bold')
+ax.text(x1-radius1-0.5, -21.4, 'B', fontsize=20, fontweight='bold')
+ax.text(x2-radius2-0.5, -21.4, 'C', fontsize=20, fontweight='bold')
 
 # Save figure as pdf
 plt.savefig('figure_2.pdf',

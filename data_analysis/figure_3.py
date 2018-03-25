@@ -48,6 +48,7 @@ patients = 0 * np.ones((run_len, time_len)) # array for number of patient pedest
 avg_init_prop = np.zeros(len(mylist) - 1) # average initial proportion of impatient agents (for scenarios with game)
 avg_flow = np.zeros(len(mylist) - 1) # average flow over whole evacuation (for scenarios with game)
 sem = np.zeros(len(mylist) - 1) # standard mean error of flow for whole evacuation (for scenarios with game)
+std = np.zeros(len(mylist) - 1) # standar deviation of flow for whole evacuation (for scenarios with game)
 
 # Initialize the figure
 grid_cell = 10.5
@@ -76,20 +77,20 @@ for i in range(0, len(mylist)):
     for j in range(run_start, run_end): 
 
 	# Open data for simulation time points
-        if os.path.exists("{}{}{}{}{}".format(mylist[i], '/', 'time_tot', j, '.npy.gz')):
-            time_tot = np.loadtxt("{}{}{}{}{}".format(mylist[i], '/', 'time_tot', j, '.npy.gz'))
+        if os.path.exists("{}{}{}{}{}{}".format('simulation_data/', mylist[i], '/', 'time_tot', j, '.npy.gz')):
+            time_tot = np.loadtxt("{}{}{}{}{}{}".format('simulation_data/', mylist[i], '/', 'time_tot', j, '.npy.gz'))
             # For simulations with the game, save the end time of the simulation.
             if i < 9:
                 end_times_lst[i,j] = time_tot[-1]
 
         # Data of pedestrians in the room at different times (0="not in room", 1="in room").
-        if os.path.exists("{}{}{}{}{}".format(mylist[i], '/', 'in_room1', j, '.npy.gz')):
-            in_room1 = np.loadtxt("{}{}{}{}{}".format(mylist[i], '/', 'in_room1', j, '.npy.gz'))
+        if os.path.exists("{}{}{}{}{}{}".format('simulation_data/', mylist[i], '/', 'in_room1', j, '.npy.gz')):
+            in_room1 = np.loadtxt("{}{}{}{}{}{}".format('simulation_data/', mylist[i], '/', 'in_room1', j, '.npy.gz'))
 
         # For simulations with the game, open data for number of pedestrians that have left the room.
         if i < 9:
-            if os.path.exists("{}{}{}{}{}".format(mylist[i], '/', 'in_goal', j, '.npy.gz')):
-                in_goal = np.loadtxt("{}{}{}{}{}".format(mylist[i], '/', 'in_goal', j, '.npy.gz'))
+            if os.path.exists("{}{}{}{}{}{}".format('simulation_data/', mylist[i], '/', 'in_goal', j, '.npy.gz')):
+                in_goal = np.loadtxt("{}{}{}{}{}{}".format('simulation_data/', mylist[i], '/', 'in_goal', j, '.npy.gz'))
 
             # Difference the time series of number of evacuated pedestrians
             diff_in_goal = np.ediff1d(in_goal)
@@ -115,8 +116,8 @@ for i in range(0, len(mylist)):
             t += len(in_goal_times) - 1
 
         # Data of strategies of pedestrians in the room at different times (0="impatient", 1="patient")
-        if os.path.exists("{}{}{}{}{}".format(mylist[i], '/', 'strategy', j, '.npy.gz')):
-            strategy = np.loadtxt("{}{}{}{}{}".format(mylist[i], '/', 'strategy', j, '.npy.gz'))
+        if os.path.exists("{}{}{}{}{}{}".format('simulation_data/', mylist[i], '/', 'strategy', j, '.npy.gz')):
+            strategy = np.loadtxt("{}{}{}{}{}{}".format('simulation_data/', mylist[i], '/', 'strategy', j, '.npy.gz'))
 
         # Calculate the proportion of impatient pedestrians in the room after 10 pedestrians have evacuated,
         # i.e., approximately at the time when the crowd has formed a half-circle in front of the exit.
@@ -164,6 +165,7 @@ for i in range(0, len(mylist)):
         # Modify time lapses data so that np.unique can be used on them
         #print(titles[i]) # print scenario name
         #print(np.mean(time_lapses[0:t])) # print mean of time lapses
+        #print(np.std(time_lapses[0:t])) # print standard error of time lapses
         #print(np.std(time_lapses[0:t])/np.sqrt(len(time_lapses[0:t]))) # print standard error of mean
         time_lapses = np.array(time_lapses[0:t])*10 # time lapses multiplied by 10 (get to int)
         time_lapses = time_lapses.astype(int) # change type to int
@@ -209,7 +211,7 @@ for i in range(0, len(mylist)):
         ax0.get_xaxis().tick_bottom()
         ax0.get_yaxis().tick_left()
         ax0.yaxis.set_label_coords(-0.21,0.5)
-        ax0.set_ylim(0.00005,1)
+        ax0.set_ylim(0.00003,1)
         ax0.set_xlim(right=20)
         ax0.set_xlim(left=0.1)
         ax0.set_yscale('log')
@@ -257,10 +259,16 @@ for i in range(0, len(mylist)):
         if i == 8:
             avg_init_prop[i] = 0 # average initial prop. of impatient pedestrians is obviously 0
             avg_flow[i] = 200/(1.2*np.mean(end_times_lst[i,:])) # average flow at exit
-            ax2.scatter(avg_init_prop[i], avg_flow[i], facecolors='black', edgecolors='black', marker="x")
+            ax2.scatter(avg_init_prop[i], avg_flow[i], facecolors='black', edgecolors='black')
 
-        # Plot standard error of flow mean. The values are so small that they don't show up on the plot!
+        # Calculate standard error of flow mean. The values are so small that they don't show up on the plot!
         sem[i] = np.std(200/(1.2*end_times_lst[i,:])) / np.sqrt(run_len)
+
+        # Calculate standar deviation of flow
+        std[i] = np.std(200/(1.2*end_times_lst[i,:]))
+
+        # Plot errorbar with standard deviation
+        ax2.errorbar(avg_init_prop[i], avg_flow[i], yerr=std[i], ecolor='black', ls='none')
 
         ax2.set_yticks([0,0.4,0.8,1.2,1.6])
         ax2.set_xticks([0,0.25,0.5,0.75,1.0])

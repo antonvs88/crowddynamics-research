@@ -12,7 +12,7 @@ sample_interval = int(sample_step/integration_step)
 sample_interval_finer = int((sample_step*0.5)/integration_step)
 
 # The outer loop goes through the folders. The data from the .hdf5 files is extracted to these folders as .npy.gz files
-mylist = ['taset500'] # name of the folder, where the data is; can be an array of names
+mylist = ['taset0'] # name of the folder, where the data is; can be an array of names
 for i in mylist:
 
     # The inner loop goes through the simulations (in this case it goes through just one simulation)
@@ -41,14 +41,14 @@ for i in mylist:
         subgroup = group['egressgame'] # comment if game is not played
         strategy = subgroup['strategy'] # comment if game is not played
         
-        np.savetxt("{}{}{}{}{}".format(i, '/', 'time_tot', j, '.npy.gz'), time_tot[0::sample_interval])
-        np.savetxt("{}{}{}{}{}".format(i, '/', 'in_goal', j, '.npy.gz'), in_goal[0::sample_interval])
-        np.savetxt("{}{}{}{}{}".format(i, '/', 'in_room1', j, '.npy.gz'), in_room1[0::sample_interval])
-        np.savetxt("{}{}{}{}{}".format(i, '/', 'positions_x', j, '.npy.gz'), positions[0::sample_interval_finer, :, 0])
-        np.savetxt("{}{}{}{}{}".format(i, '/', 'positions_y', j, '.npy.gz'), positions[0::sample_interval_finer, :, 1])
-        np.savetxt("{}{}{}{}{}".format(i, '/', 'velocities_x', j, '.npy.gz'), velocities[0::sample_interval, :, 0])
-        np.savetxt("{}{}{}{}{}".format(i, '/', 'velocities_y', j, '.npy.gz'), velocities[0::sample_interval, :, 1])
-        np.savetxt("{}{}{}{}{}".format(i, '/', 'strategy', j, '.npy.gz'), strategy[0::sample_interval]) # comment if game not played
+        np.savetxt("{}{}{}{}{}{}".format('simulation_data/', i, '/', 'time_tot', j, '.npy.gz'), time_tot[0::sample_interval])
+        np.savetxt("{}{}{}{}{}{}".format('simulation_data/', i, '/', 'in_goal', j, '.npy.gz'), in_goal[0::sample_interval])
+        np.savetxt("{}{}{}{}{}{}".format('simulation_data/', i, '/', 'in_room1', j, '.npy.gz'), in_room1[0::sample_interval])
+        np.savetxt("{}{}{}{}{}{}".format('simulation_data/', i, '/', 'positions_x', j, '.npy.gz'), positions[0::sample_interval_finer, :, 0])
+        np.savetxt("{}{}{}{}{}{}".format('simulation_data/', i, '/', 'positions_y', j, '.npy.gz'), positions[0::sample_interval_finer, :, 1])
+        np.savetxt("{}{}{}{}{}{}".format('simulation_data/', i, '/', 'velocities_x', j, '.npy.gz'), velocities[0::sample_interval, :, 0])
+        np.savetxt("{}{}{}{}{}{}".format('simulation_data/', i, '/', 'velocities_y', j, '.npy.gz'), velocities[0::sample_interval, :, 1])
+        np.savetxt("{}{}{}{}{}{}".format('simulation_data/', i, '/', 'strategy', j, '.npy.gz'), strategy[0::sample_interval]) # comment if game not played
 
     # Close the HDF5-file
     file.close()

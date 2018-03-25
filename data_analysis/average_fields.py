@@ -14,7 +14,7 @@ from recursive_mean import recursive_mean
 # The data is divided into four intervals.
 n_intervals = 4
 # The number of simulations.
-n_simulations = 50
+n_simulations = 100
 
 # Cell size in the grid, determines the resolution of the micro-macro converted data (this was determined in "calculate_field_data.py")
 cell_size = 0.1
@@ -29,7 +29,7 @@ n = n.astype(int)
 chunk = 1000 # chunk size
 
 # Name of the folder, where the data is; can be an array of folders
-mylist = ['vd4_A1250_normi']
+mylist = ['taset0']
 
 # The outer loop goes through the intervals (the data is divided in four time intervals, where first interval contains data when there are between 190 to 145 pedestrians in the room, second interval when there are 145 to 100, third when there are between 100 and 55, and fourth when there are between 55 to 10).
 for i in range(1,n_intervals+1):
