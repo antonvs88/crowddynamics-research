@@ -9,4 +9,4 @@ Folders in the repository:
 
 See the "readme.txt" file in each folder for instructions to use the codes!
 
-The repository is based on my summer worker Jaan Tollander's codes https://github.com/jaantollander/crowddynamics, which where created when he was working as a research assistant in our research group in Aalto University School of Science, Department of Mathematics and Systems Analysis in summer 2016. His code is well-documented in http://jaantollander.com/crowddynamics/.
+The repository is based on research assistant Jaan Tollander's codes https://github.com/jaantollander/crowddynamics, which he created when he was working in our research group in Aalto University School of Science, Department of Mathematics and Systems Analysis in summer 2016. His code is well-documented in http://jaantollander.com/crowddynamics/.
