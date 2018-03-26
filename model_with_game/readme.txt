@@ -9,7 +9,7 @@ buildscripts
 Scripts for installing the conda environment and dependencies.
 
 requirements.txt
-Dependencies.
+Dependencies. Here are listed all the python packages needed to run the code.
 
 run_gui.py
 Run simulation with GUI.
