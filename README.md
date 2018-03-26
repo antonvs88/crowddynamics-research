@@ -1,5 +1,5 @@
 # crowddynamics-research
-10.5281/zenodo.1207629 
+[![DOI: 10.5281/zenodo.1207629](https://zenodo.org/badge/doi/10.5281/zenodo.1207629.svg)](https://doi.org/10.5281/zenodo.1207629)
 Research code used in von Schantz & Ehtamo "Overtaking others in a spatial game of egress congestion". The repository includes code for simulation, data analysis and visual representation of data.
 
 Folders in the repository:
