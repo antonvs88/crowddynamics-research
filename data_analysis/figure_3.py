@@ -1,5 +1,4 @@
 import numpy as np
-import h5py
 import matplotlib.pyplot as plt
 import os
 from mpl_toolkits.axes_grid1.inset_locator import zoomed_inset_axes, mark_inset
@@ -13,6 +12,7 @@ import matplotlib.gridspec as gridspec
 import matplotlib.ticker
 from matplotlib.ticker import FormatStrFormatter
 from matplotlib.ticker import ScalarFormatter
+from matplotlib.ticker import LogLocator
 
 # Folders containing the field data averaged over time and sample for different scenarios (npy.gz format).
 # NOTE: Check that the location is correct!
@@ -163,10 +163,6 @@ for i in range(0, len(mylist)):
     # time lapse resolution 0.1, because sample step 0.1
     if i in {0,1,3,6}:
         # Modify time lapses data so that np.unique can be used on them
-        #print(titles[i]) # print scenario name
-        #print(np.mean(time_lapses[0:t])) # print mean of time lapses
-        #print(np.std(time_lapses[0:t])) # print standard error of time lapses
-        #print(np.std(time_lapses[0:t])/np.sqrt(len(time_lapses[0:t]))) # print standard error of mean
         time_lapses = np.array(time_lapses[0:t])*10 # time lapses multiplied by 10 (get to int)
         time_lapses = time_lapses.astype(int) # change type to int
         time_lapses = np.sort(time_lapses) # sort datapoints
@@ -195,31 +191,28 @@ for i in range(0, len(mylist)):
         if i == 6:
             ax0.scatter(unique_points/10, ccdf[up_indices], marker=markers[i], s = 40,
                         facecolors=faces[i], edgecolors=edges[i], label=titles[i], linewidth=0.1)
-        ax0.set_yscale('log')
         ax0.set_xscale('log')
         ax0.set_xlabel('Time, t (s)', fontsize=12)
         ax0.set_ylabel(r'Probability of $\Delta$x > t', fontsize=12)
         ax0.get_xaxis().set_tick_params(direction='out', width=2, top='off')
-        ax0.yaxis.set_major_formatter(ScalarFormatter())
-        ax0.xaxis.set_major_formatter(ScalarFormatter())
-        ax0.yaxis.set_major_formatter(FormatStrFormatter('%.2f'))
         ax0.xaxis.set_major_formatter(FormatStrFormatter('%.1f'))
-        ax0.get_yaxis().set_tick_params(direction='out', width=2, top='off', labelsize=12, pad=0.05)
-        ax0.get_xaxis().set_tick_params(direction='out', width=2, top='off', labelsize=12, pad=0.05)
+        ax0.get_xaxis().set_tick_params(direction='out', width=2, top='off', labelsize=12, pad=2)
         ax0.tick_params(axis='x', which='minor', direction='out', width=2)
-        ax0.tick_params(axis='y', which='minor', direction='out', width=2)
         ax0.get_xaxis().tick_bottom()
-        ax0.get_yaxis().tick_left()
-        ax0.yaxis.set_label_coords(-0.21,0.5)
-        ax0.set_ylim(0.00003,1)
         ax0.set_xlim(right=20)
         ax0.set_xlim(left=0.1)
         ax0.set_yscale('log')
+        ax0.set_yticks([0.00001,0.0001,0.001,0.01,0.1,1])
+        ax0.set_yticklabels([r'$10^{-5}$',r'$10^{-4}$',r'$10^{-3}$',r'$10^{-2}$',r'$10^{-1}$',r'$10^0$'], fontsize=12)
+        ax0.get_yaxis().tick_left()
+        ax0.set_ylim(0.00003,1)
+        ax0.get_yaxis().set_tick_params(direction='out', width=2, top='off', labelsize=12, pad=2)
+        ax0.tick_params(axis='y', which='minor', direction='out', width=2)
         ax0.legend(loc='lower left',
-                   fontsize=12,
+                   fontsize=10,
                    scatterpoints=1,
                    bbox_to_anchor=(0, 0),
-                   handletextpad=0.1,
+                   handletextpad=0.01,
                    borderpad=0.25,
                    borderaxespad=0.25,
                    )
@@ -242,7 +235,7 @@ for i in range(0, len(mylist)):
         ax1.set_ylabel('Number of evacuated pedestrians', fontsize=12)
         ax1.set_xlabel(r'Time, t (s)', fontsize=12)
         ax1.legend(loc='lower right',
-                   fontsize=12,
+                   fontsize=10,
                    bbox_to_anchor=(1.0, 0.0),
                    handletextpad=0.1,
                    borderpad=0.25,
@@ -254,12 +247,12 @@ for i in range(0, len(mylist)):
         if i < 8:
             avg_init_prop[i] = np.mean(strat_lst[i,:]) # average initial prop. of impatient pedestrians
             avg_flow[i] = 200/(1.2*np.mean(end_times_lst[i,:])) # average flow at exit
-            ax2.scatter(avg_init_prop[i], avg_flow[i], facecolors='black', edgecolors='black')
+            ax2.scatter(avg_init_prop[i], avg_flow[i], facecolors='black', edgecolors='black', s=8)
         # "All patient pedestrians" scenario
         if i == 8:
             avg_init_prop[i] = 0 # average initial prop. of impatient pedestrians is obviously 0
             avg_flow[i] = 200/(1.2*np.mean(end_times_lst[i,:])) # average flow at exit
-            ax2.scatter(avg_init_prop[i], avg_flow[i], facecolors='black', edgecolors='black')
+            ax2.scatter(avg_init_prop[i], avg_flow[i], facecolors='black', edgecolors='black', s=8)
 
         # Calculate standard error of flow mean. The values are so small that they don't show up on the plot!
         sem[i] = np.std(200/(1.2*end_times_lst[i,:])) / np.sqrt(run_len)
@@ -268,23 +261,24 @@ for i in range(0, len(mylist)):
         std[i] = np.std(200/(1.2*end_times_lst[i,:]))
 
         # Plot errorbar with standard deviation
-        ax2.errorbar(avg_init_prop[i], avg_flow[i], yerr=std[i], ecolor='black', ls='none')
+        ax2.errorbar(avg_init_prop[i], avg_flow[i], yerr=std[i], ecolor='black', ls='none', capsize=2.5)
 
         ax2.set_yticks([0,0.4,0.8,1.2,1.6])
         ax2.set_xticks([0,0.25,0.5,0.75,1.0])
         ax2.set_yticklabels([0,0.4,0.8,1.2,1.6])
         ax2.set_xticklabels([0.0,0.25,0.50,0.75,1.0])
-        ax2.get_yaxis().set_tick_params(direction='out', width=2, top='off', labelsize=12, pad=0.05)
-        ax2.get_xaxis().set_tick_params(direction='out', width=2, top='off', labelsize=12, pad=0.05)
+        ax2.get_yaxis().set_tick_params(direction='out', width=2, top='off', labelsize=12, pad=2)
+        ax2.get_xaxis().set_tick_params(direction='out', width=2, top='off', labelsize=12, pad=2)
         ax2.set_xlim(0,1)
         ax2.set_ylim(0,1.6)
-        ax2.set_ylabel(r'Pedestrian flow at exit (1/(m $\cdot$ s)) ', fontsize=12)
-        ax2.set_xlabel('Proportion of Impatient', fontsize=12)
+        ax2.set_ylabel(r'Flow at exit (1/(m $\cdot$ s)) ', fontsize=12)
+        ax2.xaxis.set_label_coords(0.55, -0.16)
+        ax2.set_xlabel('Proportion of impatient pedestrians', fontsize=12)
 
-ax2.text(0, 0.8, 'All Patient', fontsize=12)
-fig.text(0.003, 0.94, 'a', fontweight='bold', fontsize=16, transform=fig.transFigure)
+ax2.text(0.04, 0.76, r"(all pedestrians" + "\n" + "patient)", fontsize=10)
+fig.text(0.001, 0.94, 'a', fontweight='bold', fontsize=16, transform=fig.transFigure)
 fig.text(0.45, 0.94, 'b', fontweight='bold', fontsize=16, transform=fig.transFigure)
-fig.text(0.2, 0.43, 'c', fontweight='bold', fontsize=16, transform=fig.transFigure)
+fig.text(0.18, 0.43, 'c', fontweight='bold', fontsize=16, transform=fig.transFigure)
 
 # Make a second x-axis for the Taset vs average flow figure, with Taset values.
 ax3 = ax2.twiny()
@@ -302,6 +296,4 @@ ax3.set_xticklabels([500,150,80,0], fontsize=12)
 
 plt.savefig('figure_3.pdf',
             bbox_inches='tight'
-            )
-
-
+)
