@@ -12,13 +12,13 @@ import matplotlib.gridspec as gridspec
 from matplotlib.ticker import FormatStrFormatter
 
 # Folders containing the field data averaged over time and sample for different scenarios.
-mylist = ['vd1_A2000_normi', 'vd2_A1750_normi', 'vd3_A1500_normi', 'vd4_A1250_normi', 'taset0_normi', 'taset80_normi', 'taset150_normi', 'taset220_normi', 'taset350_normi', 'taset500_normi']
+mylist = ['vd1_A2000', 'vd2_A1750', 'vd3_A1500', 'vd4_A1250', 'taset0', 'taset80', 'taset150', 'taset220', 'taset350', 'taset500']
 
 # Figure titles
 titles = [r'$v^0$=1', r'$v^0$=2', r'$v^0$=3', r'$v^0$=4', r'$T_{ASET}$' + '\n' + '=0', r'$T_{ASET}$' + '\n' + '=80', r'$T_{ASET}$' + '\n' + '=150', r'$T_{ASET}$' + '\n' + '=220', r'$T_{ASET}$' + '\n' + '=350', r'$T_{ASET}$' + '\n' + '=500']
 
 # Interval titles
-interval_titles = [r'|N|' + '\n' + '$\in$[190,135)', r'|N|' + '\n' + '$\in$[135,90)', r'|N|' + '\n' + '$\in$[90,55)', r'|N|' + '\n' + '$\in$[55,10)']
+interval_titles = [r'$|N|$' + '\n' + '$\in$[190,135)', r'$|N|$' + '\n' + '$\in$[135,90)', r'$|N|$' + '\n' + '$\in$[90,55)', r'$|N|$' + '\n' + '$\in$[55,10)']
 
 # Number of scenarios
 n_scenarios = 10
@@ -90,7 +90,7 @@ grid4 = ImageGrid(fig4, 111,
 cmap0 = plt.cm.viridis
 cmap1 = plt.cm.viridis
 cmap2 = plt.cm.viridis
-cmpa3 = plt.cm.viridis
+cmap3 = plt.cm.viridis
 cmap4 = plt.cm.inferno
 
 # Loop over all scenarios
@@ -218,8 +218,8 @@ for ci in range(0,n_scenarios):
     cbar0.ax.set_ylabel(r'Speed (m/s)', rotation=90)
     cbar1.ax.set_ylabel(r'Density (1/$m^2$)', rotation=90)
     cbar2.ax.set_ylabel(r'Speed (m/s)', rotation=90)
-    cbar3.ax.set_ylabel(r'Crowd pressure (1/$s^2$)', rotation=90)
-    cbar4.ax.set_ylabel(r'Crowd pressure (1/$s^2$)', rotation=90)
+    cbar3.ax.set_ylabel(r'Crowd pressure (1/s${}^2$)', rotation=90)
+    cbar4.ax.set_ylabel(r'Crowd pressure (1/s${}^2$)', rotation=90)
 
 
 plt.figure(0)
