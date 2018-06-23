@@ -22,8 +22,8 @@ m = m.astype(int)
 n = n.astype(int)
 
 # Names of folders containing the field data averaged over time and sample for different scenarios.
-mylist = ['taset0_normi', 'taset80_normi', 'taset150_normi', 'taset220_normi', 'taset350_normi', 'taset500_normi',
-          'vd1_A2000_normi', 'vd2_A1750_normi', 'vd3_A1500_normi', 'vd4_A1250_normi']
+mylist = ['taset0', 'taset80', 'taset150', 'taset220', 'taset350', 'taset500',
+          'vd1_A2000', 'vd2_A1750', 'vd3_A1500', 'vd4_A1250']
 
 # Figure titles
 titles = [r'$T_{ASET}$=0', r'$T_{ASET}$=80', r'$T_{ASET}$=150', r'$T_{ASET}$=220', r'$T_{ASET}$=350', r'$T_{ASET}$=500',
@@ -123,7 +123,7 @@ for i in range(0,n_chosen):
         ax1.xaxis.set_label_coords(-0.1, -0.05)
         cax = fig.add_axes([0.555, 0.81, 0.39, 0.03])
         cbar = fig.colorbar(im, orientation='horizontal', cax=cax, ticks=[0, 0.6, 1.2, 1.8],
-                            label=r'Crowd pressure (1/$s^2$)')
+                            label=r'Crowd pressure (1/s${}^2$)')
         ax = plt.gca()
         cbar.ax.xaxis.set_ticks_position('top')
         cbar.ax.xaxis.set_label_position('top')
@@ -144,7 +144,7 @@ for i in range(0,n_chosen):
     ax2.set_ylim([0, 0.4])
     ax2.set_xlim([0, 8])
     ax2.set_xlabel(r'Radial distance from exit (m)', fontsize=13)
-    ax2.set_ylabel(r'Crowd pressure (1/($s^2$))', fontsize=13)
+    ax2.set_ylabel(r'Crowd pressure (1/(s${}^2$))', fontsize=13)
     ax2.tick_params(axis='both', which='major', labelsize=12)
     ax2.get_yaxis().set_tick_params(direction='out', width=2, top='off', pad=0)
     ax2.get_xaxis().set_tick_params(direction='out', width=2, top='off', pad=0)
@@ -178,7 +178,7 @@ for i in range(0,n_chosen):
     ax3.set_ylim([0, 0.4])
     ax3.set_xlim([0, 8])
     ax3.set_xlabel(r'Radial distance from exit (m)', fontsize=13)
-    ax3.set_ylabel(r'Crowd pressure (1/($s^2$))', fontsize=13)
+    ax3.set_ylabel(r'Crowd pressure (1/(s${}^2$))', fontsize=13)
     ax3.tick_params(axis='both', which='major', labelsize=12)
     ax3.get_yaxis().set_tick_params(direction='out', width=2, top='off', pad=0)
     ax3.get_xaxis().set_tick_params(direction='out', width=2, top='off', pad=0)
