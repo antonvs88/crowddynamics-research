@@ -282,10 +282,7 @@ for i in range(0, len(mylist)):
         ax2.set_xlabel('Proportion of Impatient', fontsize=12)
 
 # Plot some details on the Taset vs average flow figure
-ax2_point1 = [0.07, 0.008]
-ax2_point2 = [0.8, 0.96]
-ax2.plot(ax2_point1, ax2_point2, color="black", linewidth=1.25)
-ax2.text(0.08, 0.6, '(all pedestrians' + '\n' + 'patient)', fontsize=12)
+ax2.text(0.06, 0.75, '(all pedestrians' + '\n' + 'patient)', fontsize=12)
 
 # Plot figure letters
 fig.text(0.003, 0.94, 'a', fontweight='bold', fontsize=16, transform=fig.transFigure)
